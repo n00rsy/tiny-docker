@@ -38,6 +38,7 @@ func Run(){
    cmd.Stderr = os.Stderr
    
    //must(os.MkdirAll("rootfs/oldrootfs", 0700))
+   must(syscall.Sethostname([]byte("container")))
    must(syscall.Mount("rootfs", "rootfs", "", syscall.MS_BIND, ""))
    must(syscall.PivotRoot("rootfs", "rootfs/oldrootfs"))
    must(os.Chdir("/"))
