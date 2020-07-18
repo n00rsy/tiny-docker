@@ -3,7 +3,7 @@ package main
 import (
    "fmt"
    "os"
-   "ubernetes/lib"
+   "ubernetes/container"
 )
 
 func main(){
@@ -13,8 +13,11 @@ func main(){
    }
    switch os.Args[1] {
       case "run":
-	 fmt.Println("running for real")
-	 lib.Make_Container()
+	 fmt.Println("Initializing container...")
+	 container.Init()
+      case "child":
+         fmt.Println("Launching container...")
+	 container.Run()
       case "help":
 	 fmt.Println("helping")
       default:
