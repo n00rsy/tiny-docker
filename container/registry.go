@@ -1,4 +1,4 @@
-package main
+package container
 
 import (
 	"fmt"
@@ -24,9 +24,3 @@ func main() {
 	fmt.Println(n)
 }
 
-func must(err error) {
-	if err != nil {
-		fmt.Println("Error")
-		panic(err)
-	}
-}
